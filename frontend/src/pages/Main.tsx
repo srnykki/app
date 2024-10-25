@@ -1,8 +1,8 @@
-export default function Chats() {
+export default function Main() {
     return (
         <>
             <h1>
-                Chats
+                Main
             </h1>
         </>
     )

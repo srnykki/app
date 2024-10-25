@@ -1,8 +1,8 @@
-export default function Chats() {
+export default function News() {
     return (
         <>
             <h1>
-                Chats
+                Noticias
             </h1>
         </>
     )

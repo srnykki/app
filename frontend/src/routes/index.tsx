@@ -6,6 +6,8 @@ import {
 
 import Layout from "../layout";
 import Chats from "../pages/Chats";
+import Main from "../pages/Main";
+import News from "../pages/News";
 
 export default function RouterController() {
 
@@ -13,7 +15,10 @@ export default function RouterController() {
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
+                    <Route path="/" element={<Main />} />
                     <Route path="chats" element={<Chats />} />
+                    <Route path="/news" element={<News />} />
+
                 </Route>
             </Routes>
         </Router>

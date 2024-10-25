@@ -9,7 +9,7 @@ import {
   ListItemIcon,
 } from "@mui/material"
 
-import { Chat, Logout } from "@mui/icons-material";
+import { Chat, Logout, Newspaper } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 
@@ -89,6 +89,13 @@ export default function Drawer() {
           icon={<Chat />}
         />
 
+        <ListLink
+          primary="Noticias"
+          href="/news"
+          icon={<Newspaper />}
+        />
+
+        <Divider />
 
         <ListLink
           primary="Sair"

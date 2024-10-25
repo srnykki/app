@@ -9,18 +9,15 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-
-// import lightTheme from '@/theme/ligth';
-// import darkTheme from '@/theme/dark';
-// import { ThemeProvider } from '@mui/material/styles';
-
+import lightTheme from '../theme/light';
+import { ThemeProvider } from '@mui/material/styles';
 import { Outlet } from 'react-router-dom';
+
 const drawerWidth = 240;
 
 interface LayoutProps {
   window?: () => Window;
 }
-
 
 export default function Layout({
   window
@@ -56,7 +53,7 @@ export default function Layout({
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    //<ThemeProvider theme={lightTheme}>
+   <ThemeProvider theme={lightTheme}>
       <Box sx={{ display: 'flex', height: "100vh" }}>
         <CssBaseline />
         <AppBar
@@ -127,6 +124,6 @@ export default function Layout({
           <Outlet />
         </Box>
       </Box>
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }

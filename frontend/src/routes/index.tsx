@@ -18,7 +18,7 @@ export default function RouterController() {
                     <Route path="/" element={<Main />} />
                     <Route path="chats" element={<Chats />} />
                     <Route path="/news" element={<News />} />
-
+                    <Route path="/logout" element={<News />} />
                 </Route>
             </Routes>
         </Router>

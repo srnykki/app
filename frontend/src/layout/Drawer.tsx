@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import {
   List,
   ListItem,
   ListItemText,
-  IconButton,
   Divider,
   ListItemButton,
   ListItemIcon,
@@ -56,19 +54,6 @@ const ListLink = ({
 
 
 export default function Drawer() {
-
-  const [openModal, setOpenModal] = useState(false)
-
-
-  async function handleOpen() {
-    setOpenModal(true)
-  }
-
-  const handleClose = () => {
-    setOpenModal(false)
-
-  }
-
 
   return (
     <>

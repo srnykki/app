@@ -1,9 +1,6 @@
 import { Avatar, IconButton, Typography } from "@mui/material"
-import { useState } from "react";
 
 export default function Toolbar() {
-
-    const [profile, setProfile] = useState(false);
 
     return (
         <>
@@ -13,9 +10,7 @@ export default function Toolbar() {
 
             <div>
                 <IconButton
-                    onClick={() => setProfile(true)}
                     sx={{ p: 0 }}>
-
                     <Avatar
                         alt={undefined}
                         src={"/null"}

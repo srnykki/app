@@ -1,9 +1,12 @@
-import axios from "axios"
+import axios from 'axios';
+import dotenv from 'dotenv';
 
-const baseURL = process.env.API
+dotenv.config();
+
+const baseURL = process.env.API;
 
 const fetchApi = axios.create({
     baseURL
-})
+});
 
-export default fetchApi
+export default fetchApi;

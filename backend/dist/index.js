@@ -4,23 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const body_parser_1 = __importDefault(require("body-parser"));
+const dotenv_1 = __importDefault(require("dotenv"));
+const routes_1 = require("./routes");
+dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = process.env.PORT || 8080;
-// Middleware para lidar com JSON no corpo da requisição
-app.use(express_1.default.json());
-// Rota de teste (GET)
-app.get('/', (req, res) => {
-    res.send('Olá, bem-vindo à minha API em TypeScript!');
-});
-// Rota GET para obter usuários
-app.get('/api/usuarios', (req, res) => {
-    const usuarios = [
-        { id: 1, nome: 'João', email: 'joao@email.com' },
-        { id: 2, nome: 'Maria', email: 'maria@email.com' },
-    ];
-    res.json(usuarios);
-});
-// Inicia o servidor
+const port = process.env.PORT;
+app.use(body_parser_1.default.json());
+app.post("/generate", routes_1.generateResponse);
 app.listen(port, () => {
-    console.log(`API rodando em http://localhost:${port}`);
+    console.log(`Server running on port ${port}`);
 });

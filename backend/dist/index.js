@@ -7,10 +7,15 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const routes_1 = require("./routes");
+const cors = require('cors');
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
 app.use(body_parser_1.default.json());
+app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:1420',
+}));
 app.post("/generate", routes_1.generateResponse);
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
